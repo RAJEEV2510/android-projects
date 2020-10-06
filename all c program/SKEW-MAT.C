@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<conio.h>
+main()
+ { int i,j,m,n,a[10][10],b[10][10];clrscr();
+  printf("\tSkew-matrix Program\n");
+  printf("Enter the order of matrix\n");
+  scanf("%d,%d",&m,&n);
+  for(i=0;i<m;i++)
+  {	for(j=0;j<n;j++)
+	scanf("%d",&a[i][j]);
+   }
+   for(i=0;i<m;i++)
+  {	for(j=0;j<n;j++)
+	b[i][j]=-a[j][i];
+       }
+       for(i=0;i<m;i++)
+      {	for(j=0;j<n;j++)
+	if(i==j)
+       { b[i][j]=0;
+       } }
+    for(i=0;i<m;i++)
+  {	for(j=0;j<n;j++)
+      {	printf("\t%d\t",b[i][j]);
+   } printf("\n");}
+   getch();
+   }

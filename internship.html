@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<style>
+	        #chiti i{
+            color:green;
+            font-size: 40px;
+            position: fixed;
+            top: 1%;
+            font-size:40px; 
+            left:90%;
+            color:orange;
+			cursor: pointer;          
+			display: none;
+
+        
+        }
+        #block{
+            display: none;
+        }
+        #header h1{
+            color:white;
+            background-color:blue;
+            font-size: 40px;
+            padding-left: 100px;
+            margin-top:-8px;
+            font-weight: 900;
+            max-width: 100%;
+            border-radius: 40px;
+            text-align: center;
+        }
+       #chatbot {
+            background-color:rgb(145, 145, 216);
+            width: 100%;
+            height: auto;
+            padding-bottom: 100px;
+            border-radius: 40px;
+            
+        }
+        .user{
+            color:Black;
+            font-size: 20px;
+            border:2px solid  ;
+            margin-left: 100px;
+            border-radius: 3px;
+            padding-left: 20px;
+            align-items: center;
+            margin-top: 50px;
+            background-image: linear-gradient(blue,white);
+            background-color: darkmagenta;
+            width: 200px;
+        }
+        .chatbot{
+            color:Black;
+            font-size: 20px;
+            border:2px solid  ;
+            margin-left: 700px;
+            border-radius: 3px;
+            padding-left: 20px;
+            align-items: center;
+            background-image: linear-gradient(blue,yellow);
+            background-color: darkmagenta;
+            width: 500px;
+        }
+   #mic{
+    color: red;background-image: linear-gradient(white,yellow);width: 100px;font-size: 30px;
+    position:absolute;
+    top:80px;
+    border-radius: 10px;
+    left:1150px;
+   }
+   #user-chat{
+    margin-left: 100px;
+   }
+
+   #chatbothead{
+
+position: absolute;
+top:50px;
+left:750px;
+}
+
+@media only screen and (max-width: 600px) {
+	#chiti i{
+            color:green;
+            font-size: 60px;
+            position: fixed;
+            top: 75%;
+            color:orange;
+            left:71%;
+            
+        }
+    #header h1{
+            color:white;
+            background-color:blue;
+            font-size: 30px;
+           
+            margin-top:-8px;
+            font-weight: 500;
+            max-width:100%;
+            border-radius: 40px;
+            padding-right: 100px;
+          padding-bottom: 10px;
+          padding-top: 10px;
+        }
+       #chatbot {
+            background-color:rgb(145, 145, 216);
+            width: 100%;
+            height: auto;
+            padding-bottom: 100px;
+            border-radius: 40px;
+            margin-left: 0px;
+        }
+        .user{
+            color:Black;
+            font-size: 20px;
+            border:2px solid  ;
+            margin-left: 5px;
+            border-radius: 3px;
+            padding-left: 10px;
+            align-items: center;
+            margin-top: 10px;
+            background-image: linear-gradient(blue,white);
+            background-color: darkmagenta;
+            width: 150px;
+        }
+        .chatbot{
+            color:Black;
+            font-size: 20px;
+            border:2px solid  ;
+            margin-left: 140px;
+            border-radius: 3px;
+            padding-left: 20px;
+            margin-top: 30px;
+            align-items: center;
+            background-image: linear-gradient(blue,yellow);
+            background-color: darkmagenta;
+            width: 170px;
+        }
+   #mic{
+    color: red;background-image: linear-gradient(white,yellow);width: 40px;font-size: 20px;
+    position:absolute;
+    top:10px;
+    border-radius: 10px;
+
+    left:50px;
+   }
+   #user-chat{
+   margin-top: 15px;
+   margin-left: 30px;
+    font-size: 22px;
+    
+   }
+
+
+   #chatbothead{
+
+position: absolute;
+top:64px;
+left:200px;
+font-size: 20px;
+}
+}
+
+	*{
+		margin:0px;
+		padding:0px;
+	}
+
+	body{
+		overflow-x: none!important;
+		overflow-x: hidden;
+		position: absolute;
+      left: 0px!important;
+      
+
+	}
+	.d-block{
+		height:400px!important;
+	}
+	  ::-webkit-scrollbar{
+            width: 10px;
+            
+        }
+    ::-webkit-scrollbar-track{
+            width: 10px;
+            border-radius: 40px;
+            
+            box-shadow:inset 2px 2px 5px black;
+            background-color: #f5f5f5;
+  
+        }
+::-webkit-scrollbar-thumb{
+            width: 10px;
+            border-radius: 50%px;
+           height: 10px;
+
+            background-image: linear-gradient(orange,red);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(orange,black);
+}
+    ::-webkit-scrollbar-corner{
+            background-color: black;
+        }
+ 
+	 #map {
+        width: 100%;
+        height: 200px;
+        background-color: grey;
+      }
+.text-image{
+z-index: 100;position: absolute;top:29%;left:20%;
+color:white; font-weight: 900;font-family:cursive;	
+
+}	
+button:hover{
+background-color:darkblue!important;
+} 
+hr { 
+            
+            height: 3px; 
+            background: black; 
+          
+    } 
+
+#footer{width: 100.5%;background-color:#070617;height: 300px;padding-top: 30px; margin-top: 100px;}
+
+#image-button{
+background-color: green;
+position: absolute;top:10%;
+left:30%;
+width: 150px;
+font-family: cursive;
+color:white;
+border-radius: 20px;
+height: 40px;
+border-color: white;
+font-size:20px;
+box-shadow: 1px 1px 10px grey;
+
+}
+.card{
+
+	border-bottom-color:green; 
+}
+  #img-fluid {
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px black;
+  }
+
+
+@media (max-width: 700px) {
+    #image-button{
+      position: absolute;top:6%;
+  
+
+    }
+    .d-block{
+		height:750px!important;
+	}
+	
+  #img-fluid {
+    height: 300px;
+    width: 300px;
+   
+    margin-left:auto;  
+    box-shadow: 2px 2px 10px black;
+  }
+  #footer{
+  	height: auto;
+  	font-family: cursive;
+  }
+  iframe{
+  	width:300px;
+  	margin-left: 20px;
+  }
+}
+
+</style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>We join the world!</title>
+  </head>
+  <body>
+
+    <div id="body">
+   <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse mx-lg-5" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link " style="font-size:22px;font-family:Bookman, URW Bookman L, serif;font-weight: 900" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark"  style="font-size:22px;font-family:Bookman, URW Bookman L, serif;font-weight: 900" href="#">Events</a>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+         style="font-size:22px;font-family:Bookman, URW Bookman L, serif;font-weight: 900">
+          Activity
+        </a>
+        
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item " href="#">Event</a>
+          <a class="dropdown-item " href="#">Our Team</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item " href="#">Contact us</a>
+        </div>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link text-dark"  style="font-size:22px;font-family:Bookman, URW Bookman L, serif;font-weight: 900" href="#">Gallery</a>
+      </li>
+     <li class="nav-item ml-1">
+
+        <a class="nav-link text-white ml-5 mt-2"  
+        	style="background-color:green;
+        	border-radius: 10px;
+        	text-align: center;
+        	width: 250px;
+        	box-sizing: border-box;
+        	" 
+         href="#">Donate Now</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+<img src="C:\Users\RAJEEV KUMAR\Desktop\wejoin.png" style="height: 100px;width: 200px;
+
+">&emsp;&emsp;&emsp;
+<div id="dark-mode"
+ onclick="dark()" style="height:30px;cursor: pointer;width: 80px;background-color: black;color:white;font-family: cursive;">
+	Dark mode
+</div>
+  
+ 
+     
+</nav>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"  data-aos="fade-up"
+    data-aos-offset="-100"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" >
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner container-fluid mt-5">
+    <div class="carousel-item active" >
+      <img class="d-block w-100" src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true" alt="First slide">
+      <h1 class="text-image"> We Join 
+
+       Together Trust
+       <br>&emsp;&emsp;&emsp;(Non Profit Organization)</h1>
+          </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 "  src="https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true" alt="Second slide" >
+       <h1  class="text-image" >Providing Free Educaiton And <br>
+
+       Skill and development</h1>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://images.unsplash.com/photo-1533228876829-65c94e7b5025?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true" alt="Third slide">
+       <h1 class="text-image" > We inspire the youth <br>
+
+       <span class="mx-auto">For skill development <span></h1>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+<button id="image-button"  > Learn more</button>
+
+<!--Card-->
+
+<div id="card" class="container-fluid ml-3 mt-5 mb-5" >
+	<div class="row"  data-aos="flip-left"
+    data-aos-offset="100"
+    data-aos-delay="50"
+    data-aos-duration="3000"
+    data-aos-easing="ease-in-out"
+
+ ">
+<div class="col-lg-4 col-md-4 col-sm-12">
+<div class="card" style="width: 18rem; border-bottom-color: green;border-width: 3px;">
+  <div class="card-body">
+    <h5 class="card-title">Help  Children</h5>
+    <h6 class="card-subtitle mb-2 text-muted">providing Free meals and eduction</h6>
+    <p class="card-text">We are provide the education to underprivilage childrens  </p>
+      <img src="C:\Users\RAJEEV KUMAR\Desktop\help.png"  
+class="ml-5" 
+    style="height: 100px;width: 100px;"></i>
+  </div>
+</div>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12">
+<div class="card"  style="width: 18rem; border-bottom-color:green; border-width: 3px;">
+  <div class="card-body">
+    <h5 class="card-title">Inspiring the youth</h5>
+    <h6 class="card-subtitle mb-2 text-muted">You provide them skill</h6>
+    <p class="card-text">we provide free skill development program for youth to enhance their skill for industry level.</p>
+    <img src="C:\Users\RAJEEV KUMAR\Desktop\inspired.png"  
+class="ml-5" 
+    style="height: 100px;width: 100px;"></i> </div>
+</div>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12">
+<div class="card " style="width: 18rem; border-bottom-color: green;border-width: 3px;">
+  <div class="card-body">
+    <h5 class="card-title">Give Donation</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Give donation to us</h6>
+    <p class="card-text">Provide Donation to us so that we can help more poor peoples and youth</p>
+   
+    <img src="C:\Users\RAJEEV KUMAR\Desktop\donate.png"  
+class="ml-5" 
+    style="height: 100px;width: 100px;"></i>
+  </div>
+</div>
+</div>
+
+<!--row-->
+</div>
+</div>
+<!--grid-->
+
+<div class="container-fluid mt-5">
+<div class="row" >
+	
+<div class="col-lg-6 cl-md-6 col-sm-12 mt-5" data-aos="zoom-in" data-aos-duration="2600" data-aos-delay="50"  data-aos-offset="50">
+	
+	<div class="container-fluid">
+		<div class="row">
+		<div class="col-lg-6 cl-md-6 col-sm-12">
+			<img id="img-fluid" src="https://images.unsplash.com/photo-1529520161780-2573a0926b31?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true"
+				class="img-fluid ml-2 " 
+
+		
+		</div>
+		<div class="col-lg-6 cl-md-6 col-sm-12"><img id="img-fluid" src="https://images.unsplash.com/photo-1529520161780-2573a0926b31?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true"
+class="img-fluid ml-2 "   
+</div>	
+		</div>
+		<div class="row">
+			<div class="col-lg-6 cl-md-6 col-sm-12">
+				<img id="img-fluid" src="https://images.unsplash.com/photo-1529520161780-2573a0926b31?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true"
+class="img-fluid ml-2 " 
+
+			</div>	
+			<div class="col-lg-6 cl-md-6 col-sm-12"><img id="img-fluid" src="https://images.unsplash.com/photo-1529520161780-2573a0926b31?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true"
+class="img-fluid ml-2 "  </div>	
+		</div>
+		</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 cl-md-6 col-sm-12"><img id="img-fluid" src="https://images.unsplash.com/photo-1529520161780-2573a0926b31?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true"
+class="img-fluid ml-2 "  
+</div>	
+			<div class="col-lg-6 cl-md-6 col-sm-12"><img id="img-fluid" src="https://images.unsplash.com/photo-1529520161780-2573a0926b31?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true"
+class="img-fluid ml-2 " 
+</div>	
+		</div>
+		</div>
+
+		</div>
+
+	</div>
+
+
+</div>
+<div class="col-lg-6 cl-md-6 col-sm-12  mt-5"
+data-aos="slide-left" data-aos-duration="2600" data-aos-delay="50"  data-aos-offset="50"
+>
+	
+<div>
+<h1 class="text-dark ml-5" style="font-family: cursive;">	We  Are <span class="text-success">Community</span> </h1>
+
+</div>
+<div class="text-center ml-2 w-100">
+<p id="white">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+	sed do eiusmod tempor incididunt ut laboret dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.
+
+
+	</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="mt-5 mb-5">
+<h1 class="text-dark text-center " style="font-family: cursive;">	Our <span class="text-success">Causes</span> </h1>
+</div>
+<section>
+<div class="container-fluid mb-5">
+<div class="card-deck"  data-aos="flip-left"
+    data-aos-offset="200"
+    data-aos-delay="10"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true">
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1527266237111-a4989d028b4b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true" alt="First slide" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Feed Hungry Children
+</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-success">raised 2000 goals</small>
+    </div>
+       <button class="mx-auto" style="background-color: green;
+      border-radius: 20px;
+      border-color: white;
+      width: 200px;
+      font-family: cursive;
+      color:white;"> Donte Now</button>
+   
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1527266237111-a4989d028b4b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Medical Treatment
+</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-success">Raised: 6,500Goal:</small>
+    </div>
+      <button class="mx-auto" style="background-color: green;
+      border-radius: 20px;
+      border-color: white;
+      width: 200px;
+      font-family: cursive;
+      color:white;
+      
+      "  > Donte Now</button>
+   
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1527266237111-a4989d028b4b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Education For People</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-success">Raised: 5000 Goals</small>
+    </div>
+      <button class="mx-auto" style="background-color: green;
+      border-radius: 20px;
+      border-color: white;
+      width: 200px;
+      font-family: cursive;
+      color:white;
+      
+      "  > Donte Now</button>
+   
+  </div>
+</div>
+</div>
+</section>
+<section>
+	<div
+	 data-aos="flip-right"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
+		<hr class="w-25 text-center" style="height:2px!important;margin-left:37%;" >
+	<h1 class="text-dark text-center " style="font-family: cursive;">	Our <span class="text-success">
+		Mission & goals
+
+	</span> </h1>
+	<hr class="w-25"  style="height:2px!important; margin-left:37%;">
+
+</div>
+
+<div class="accordion" id="accordionExample" 
+ data-aos="flip-right"
+    data-aos-offset="-200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
+
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn text-success " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+         style="font-weight: 900;font-family: cursive;font-size: 25px;">
+          Education for all
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn text-success collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
+ style="font-weight: 900;font-family: cursive;font-size: 22px;"
+        >
+         Homeless Children
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn text-success collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
+        style="font-weight: 900;font-family: cursive;font-size: 25px;">
+          Love Your world
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</section>
+
+<section>
+	
+<div class="mt-5">
+		<hr class="w-25 " style="height:2px!important;margin-left:37%;" 
+		 data-aos="fade-up"
+    data-aos-offset="200"
+    data-aos-delay="10"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true">
+	<h1 class="text-dark text-center " style="font-family: cursive;">	Our <span class="text-success"
+		>
+		Vountires
+
+	</span> </h1>
+	<hr class="w-25"  style="height:2px!important; margin-left:37%;">
+
+</div>
+<section class="mt-5">
+	
+
+	<!--Carousel Wrapper-->
+<div id="multi-item-example" class="carousel slide carousel-multi-item mt-5 w-100" data-ride="carousel"
+ data-aos="flip-left"
+    data-aos-offset="10"
+    
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" >
+
+  <!--Controls-->
+  <div class="controls-top" style="position: absolute;top:450px; left:40%">
+    <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i
+    	style="font-size: 60px;"
+     class="fa fa-arrow-left" aria-hidden="true"></i></a>
+     &emsp;  &emsp;  &emsp;  &emsp;
+    <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-arrow-right" aria-hidden="true"
+    	style="font-size: 60px;"></i></a>
+  </div>
+  <!--/.Controls-->
+
+  <!--Indicators-->
+ 
+  <!--/.Indicators-->
+
+  <!--Slides-->
+  <div class="carousel-inner" role="listbox">
+
+    <!--First slide-->
+    <div class="carousel-item active">
+
+      <div class="col-md-3" style="float:left">
+       <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3" style="float:left">
+        <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3" style="float:left">
+        <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+      
+       <div class="col-md-3" style="float:left">
+       <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--/.First slide-->
+
+    <!--Second slide-->
+    <div class="carousel-item">
+
+      <div class="col-md-3" style="float:left">
+        <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3" style="float:left">
+        <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3" style="float:left">
+        <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-3" style="float:left">
+        <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--/.Second slide-->
+</div>
+  <!--/.Slides-->
+</div>
+<!--/.Carousel Wrapper-->
+</section>
+
+<!---->
+<section class="mt-5" style="margin-top: 200px!important;">
+		<div>
+		<hr class="w-25 " style="height:2px!important; margin-left:37%;" >
+	<h1 class="text-dark text-center " style="font-family: cursive;">  <span class="text-success">
+	Events	
+
+	</span> </h1>
+	<hr class="w-25"  style="height:2px!important; margin-left:37%;">
+
+</div>
+
+
+<div id="demo" class="carousel slide container" data-ride="carousel" style="border-radius: 50%!important;"
+ data-aos="zoom-in"
+    data-aos-offset="-200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center"
+>
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="container-fluid" style="border-radius: 50%!important;">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    
+  
+  <div class="carousel-caption">
+    <h3>Los Angeles</h3>
+    <p>We had such a great time in LA!</p>
+  </div>
+
+      <img src="https://images.unsplash.com/photo-1524586338739-40d41beb27d1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true" alt="Los Angeles" class="img-fluid" style="height: 450px; width:100%;border-radius: 50%!important;">
+    </div>
+    <div class="carousel-item">
+    	 <div class="carousel-caption">
+    <h3>Los Angeles</h3>
+    <p>We had such a great time in LA!</p>
+  </div>
+      <img class="img-fluid" src="https://images.unsplash.com/photo-1524586338739-40d41beb27d1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true" alt="Chicago" style="height: 450px; width: 100%;border-radius: 50%!important;">
+    </div>
+    <div class="carousel-item">
+    	 <div class="carousel-caption">
+    <h3>Los Angeles</h3>
+    <p>We had such a great time in LA!</p>
+  </div>
+      <img class="img-fluid" src="https://images.unsplash.com/photo-1524586338739-40d41beb27d1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0OTc0OH0/download?force=true" alt="New York" style="height: 450px; width: 100%;border-radius: 50%!important;">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+</div>
+</section>
+
+<div id="footer">
+	<div class="row pl-4"
+data-aos="flip-left"
+data-aos-duration="3000"
+    data-aos-offset="100"
+	>
+		
+		<div class="col-lg-4 col-md-4 col-sm-12">
+			  		<div>
+  			<h5 class="text-light ">Contact us</h5>
+  			<p class="text-light ml-3">
+  				
+  				You can always contact us for any queries <br> related to our 
+                 organization.​
+  				<br>
+  				Address  📉
+
+			B-669, Gautampuri, Phase - II, Badarpur, New Delhi 110044
+	  			</p>
+
+  		</div>
+
+		</div>
+
+	<div class="col-lg-4 col-md-4 col-sm-12">
+		  		<div>
+  			<h5 class="text-light ">Contact us</h5>
+  			<p class="text-light ml-3">
+  				
+  			
+
+M: 9910478798 ☎️
+    <br>
+
+M: 9555898945 ☎️
+<br>
+Email: jointogetherdelhi@gmail.com ✉️
+	  			</p>
+
+  		</div>
+
+		</div>
+	<div class="col-lg-4 col-md-4 col-sm-12">
+		  		<div>
+		  			<h1 class="text-light">Route</h1>
+<iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14026.098958650466!2d76.998432721126!3d28.49385612813301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d175c07824277%3A0x504ab9f510440d73!2sRajendra%20Park%2C%20Sector%20105%2C%20Gurugram%2C%20Haryana%20122006!5e0!3m2!1sen!2sin!4v1597665240509!5m2!1sen!2sin"  height="150"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  		</div>
+
+		</div>
+
+
+
+	</div>
+<div class="row text-center  pl-5" >
+	<div class="col-lg-12">
+	<div class="footer-copyright text-center text-light">© 2020 Copyright:
+  we Join Together
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div id="chiti" >
+    <i class="fa fa-comments-o" aria-hidden="true" onclick="fun()"></i>
+</div>
+
+
+    <div id="block">
+
+    <div id="header">
+       <h1> Chatbot </h1>
+
+    </div>
+    <div id="chatbot">
+        <h1 id="user-chat">
+            user
+        </h1>
+
+    <div class="user-area">
+
+        <div class="chatarea-main">
+        </div>
+        <div class="chatarea-outer">
+       
+       
+        </div>     
+    
+
+
+<div class="chatbot-area" >
+<h1 id="chatbothead">
+Chatboat
+</h1>
+
+</div>
+
+<button id="mic">
+🔈
+</button>
+</div>
+
+</div>
+<script >
+let intro=['raam raam, i am chhiti 2.3.1 ','hello,I am chhitti 2.0','namaste ji, I am chhiti 2.0.1'];
+let help=['hello i am chhiti,Welcome to password manager','hello i am ROBO,Welcome to password manager ,hello how can i help you',"Chitti here Welcome to password manager"];
+let password=['password manger is complete secure system created in mongo db and hashing algorithm BY Rutech'];
+let info=['you can save your social media password ','you can save your banking password'];
+let bye=['bye take care','tussi nahi jao']
+let save=['first you will have to sign up and login then add category after save password details']
+let joke=[' Heights Of Insult By A Grammar Freak Girl. Girl To Boy: "You Are As Useless As Ay In Okay','A Teenage Girl Was Chatting On Facebook. Stranger: "Hey Pretty! Could You Give Me Your Mail Id?" Girl: "Oh Sure, Its IHaveABoyfriend_andiLoveHim','There Are Basically 7 Types Of Girls... 1. Hard Disk Girls: Remember Everything Forever. 2. Ram Girls: Forgets About You The Moment You Turn Her']
+    var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+    var recognition = new SpeechRecognition();
+    let chatareamain=document.querySelector('.chatarea-main')
+    let chatareaouter=document.querySelector('.chatarea-outer')
+
+    let mic=document.getElementById('mic');
+    mic.addEventListener('click',function(){
+        recognition.start()
+        mic.style.color="green"
+    })
+
+
+    recognition.onresult=function (e)
+    {
+        let resultIndex=e.resultIndex;
+        let transcript=e.results[resultIndex][0]['transcript']
+        console.log(transcript)
+        chatareamain.appendChild(showusermsg(transcript))
+        chatbotvoice(transcript)
+    
+    }
+    function showusermsg(usermsg){
+    let output='';
+    output+=`<div class="chatarea-inner user"> ${usermsg}</div>`;
+    chatareaouter.innerHTML+=output
+    return chatareaouter
+}
+function showchatbotmsg(chatbotmsg){
+    let output='';
+    output+=`<div class="chatarea-inner chatbot">${chatbotmsg}</div>`;
+    chatareaouter.innerHTML+=output
+    return chatareaouter
+}
+
+
+function chatbotvoice(message){
+    const speech=new SpeechSynthesisUtterance();
+    speech.text='RAJEEV KUMAR'
+   
+    if(message.includes('hello'))
+    {   
+        let finalresult=intro[Math.floor(Math.random()*intro.length)]
+        speech.text=finalresult
+
+    }
+   else if(message.includes('what is Password Manager'))
+    {   
+        let finalresult=password[Math.floor(Math.random()*password.length)]
+        speech.text=finalresult
+
+    }
+   else if(message.includes('what can I save')  )
+    {   
+        let finalresult=info[Math.floor(Math.random()*info.length)]
+        speech.text=finalresult
+
+    }
+   else if(message.includes('how can I save my password')||message.includes('how can I save password'))
+    {   
+        let finalresult=save[Math.floor(Math.random()*save.length)]
+        speech.text=finalresult
+
+    }
+    else if(message.includes('organisation name'))
+    {
+        speech.text="PASSWORD MANAGER technology"
+    }
+    else if(message.includes('who are you'))
+    {
+        let finalresult=intro[Math.floor(Math.random()*intro.length)]
+        speech.text=finalresult
+
+    }
+    else if(message.includes('tell me about your website'))
+    {
+        speech.text="This website is created for storing your bussiness password,social account,banking password "
+    }
+    else if(message.includes('namaste'))
+    {
+        speech.text="namaste thik hun "
+    }
+    else if(message.includes('Halchal kaisa hai'))
+    {
+        speech.text=" thik hun "
+    }
+    else if(message.includes('tum kaun ho'))
+    {
+        speech.text="Me chhiti 2.1.1 hun "
+    }
+    else if(message.includes('Kya Kam karte ho'))
+    {
+        speech.text="info deta hun"
+    }
+    else if(message.includes('how you earn money'))
+    {
+        speech.text="from visiters "
+    }
+    else if((message.includes('tell me a joke')) || (message.includes('tell me joke') ))
+    {
+        let finalresult=joke[Math.floor(Math.random()*joke.length)]
+        speech.text=finalresult
+
+    }
+   else if(message.includes('who is Rajiv Kumar'))
+    {   
+    
+        speech.text='rajiv kumar is our boss'
+
+    }
+    else if(message.includes('how are you'))
+    {    speech.text='fantastic,what about you?'
+    }
+    else if(message.includes('bye'))
+    {   let finalresult=bye[Math.floor(Math.random()*bye.length)]
+        speech.text=finalresult
+
+    }
+else{
+    speech.text='Are you mad not asking correct questions,try again'
+}
+    window.speechSynthesis.speak(speech)
+    chatareamain.appendChild(showchatbotmsg(speech.text))
+}
+recognition.onend=function()
+{
+    mic.style.color="red"
+}
+
+    </script>
+<script>
+    
+    var x=0;
+    function fun(){
+    
+if(x==0){
+        document.getElementById('block').style.display="block"
+         document.getElementById('body').style.display="none"
+    x=1;
+
+    }
+    else{
+
+        document.getElementById('block').style.display="none";
+         document.getElementById('body').style.display="block";
+
+        x=0;
+
+    }
+    }
+    </script>
+<script>
+	var x=0;
+function dark(){
+
+if(x==0)
+{
+	document.getElementById("white").style.color="white";
+ document.getElementById('body').style.background="repeating-linear-gradient(45deg,#000 0,#2b2b2b 10%,#222 0,#000 50%) 0/15px 15px"
+ x=1;
+}
+else{
+ document.getElementById('body').style.background="white";
+ document.getElementById("white").style.color="black";
+ x=0;
+
+}
+}
+</script>
+
+
+<!-- Footer -->
+  
+<!-- Footer -->
+
+<script>
+  AOS.init();
+</script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

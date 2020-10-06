@@ -1,0 +1,23 @@
+#include<conio.h>
+#include<stdio.h>
+main()
+{ 	int i,n,mid,a[10],l=0,u=9;
+
+	for(i=0;i<9;i++)
+	{
+	 scanf("%d",&a[i]);
+	}
+	mid=(u+l)/2;
+	scanf("%d",&n);
+	while(l<=u)
+       {	if(n==a[mid])
+	break;
+	else if (n>a[mid])
+	l=mid+1;
+	else
+	u=mid-1;
+	}
+
+	printf("search succes");
+	getch();
+	}

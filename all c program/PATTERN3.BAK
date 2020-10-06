@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+
+{	int i,j,k=0;
+	clrscr();
+	printf("\t\tpattern program\n");
+	for(i=1;i<=5;i++)
+       {	i<=3?k++:k--;
+	for(j=1;j<=5;j++)
+	{ 	if(j>=4-k && j<=k+2)
+		printf("*");
+		else
+		printf(" ");
+	} printf("\n");
+	}
+getch();
+}

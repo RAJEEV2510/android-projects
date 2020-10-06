@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<conio.h>
+void main()//prototype
+{
+	int i,j,n,k,c,a[20],count=0;
+	clrscr();
+	printf("enter number of digit\n");
+	scanf("%d",&n);
+	printf("enter n digit number\n");
+
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	 }
+	for(i=0;i<n;i++)
+	{
+		if(a[i]==a[n-i-1])
+		 k=2;
+		else
+		 k=1;
+	  }
+
+	 if(k==2)
+	 printf("number is palidrome\n");
+	 else
+	 printf("number is not palidrome");
+	 getch();
+    }
+
+

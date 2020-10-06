@@ -1,0 +1,30 @@
+#include<conio.h>
+#include<stdio.h>
+int binarysearch(int a[],int x,int r,int l);//prototype of function
+int main()
+{
+	int a[]={10,20,30,40,50,60};//sorted array
+	int x,r=6,l=0,result;
+	clrscr();
+	printf("enter a number for compare\n");
+	scanf("%d",&x);
+	result=binarysearch(a,x,r,l);//call a function.
+	printf("comapare is number at position: %d",result+1);
+	getch();
+	return 0;
+ }
+ int binarysearch(int a[],int x,int r,int l)//define a function
+ {      int mid;
+	if(r>=l)
+	{
+		mid=(l+r)/2;
+
+		if(a[mid]==x)
+		return mid;
+		else if(a[mid]<x)
+		return binarysearch(a,x,r,mid+1);//recursive
+		else
+		return binarysearch(a,x,mid-1,l);
+	}
+	return -1;
+   }

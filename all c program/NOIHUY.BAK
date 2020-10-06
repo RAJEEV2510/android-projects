@@ -1,0 +1,16 @@
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+main()
+{
+   int *destination;
+   char *source = " States";clrscr();
+   for(i=0;i!=0
+   scanf("%d",&destination);
+
+
+   strncat(destination, source, 7);
+   printf("%d%s\n", destination,source);
+	    getch();
+   return 0;
+}

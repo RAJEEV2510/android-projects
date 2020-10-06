@@ -1,0 +1,33 @@
+#include<conio.h>
+#include<stdio.h>
+int a(int,int);//prototype of function
+main()
+{
+	int m,n,result;
+	clrscr();
+	printf("ackermann function\n");
+	printf("\nenter the value of m and n\n");
+	scanf("%d %d",&m,&n);
+	{
+	      result=a(m,n);//calling offunction
+	      printf("value of function is %d");
+	      getch();
+	  }
+int a(int m,int n)
+{       int s,r,t,l;
+	if(m=0)
+	{
+		a(m,n)=n+1;
+		s=n+1;
+		return s;
+	  }
+	else if(m!=0 && n=0)
+	{
+	      a(m,n)=a(m-1,1);
+		return  r=a(m-1,1);;
+	  }
+	  else
+	  {
+		a(m,n)=a(m-1,a(m,n-1);
+		l= a(m-1,a(m,n-1);
+	  }

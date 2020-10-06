@@ -1,0 +1,39 @@
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+#define total 5.0;
+
+int main()
+{ int num[5],i,sum=0;
+  double avg;         clrscr();
+  printf("\t\t\tPercentage Calculator\n\n Finding A Percentage Of Your Marks.");
+  printf("\n Enter The Marks Of All Subjects:\n");
+  for(i=0;i<=4;i++)
+  scanf("%d",&num[i]);
+  for(i=0;i<=4;i++)
+ { sum=sum+num[i];
+
+ } printf("%d\n",sum);
+   avg=sum/total;
+
+   printf("%lf\n percentage\n",avg);
+   printf("Now You Are Promoted In Next Sem\n\n");
+   if(avg>=95)
+   printf("outstanding.");
+   else if(avg>80)
+   printf("excellent.");
+   else if(avg>60)
+   printf("First division.");
+   else if(avg>40)
+   printf("pass.");
+   else
+   printf("may be u fail in your exam.");
+
+
+
+
+
+   getch();
+}
+
+

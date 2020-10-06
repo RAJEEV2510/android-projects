@@ -1,0 +1,34 @@
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+
+ main()
+
+ {   float a,b,c;
+      float d,e,f,g,h,i;
+	printf("\t\tQuadratic function prgram\n");
+	printf("Enter the value of A,B,C\n");
+	scanf("%f,%f,%f",&a,&b,&c);
+	d=(b*b-4*a*c);
+	e=sqrt(d);
+	printf("the value of d  =  %f, sqrt of d  %f\n\n\n",d,e);
+	f=(-b+e)*pow(2*a,-1);//2*a;
+	g=(-b-e)*pow(2*a,-1);
+	h=-b/(2*a);
+
+
+	if(d>0)
+       {	printf("real of roots of a,b,c\n\n");
+		printf("are  %f,%f\n",f,g);
+       }
+	else if(d=0)
+	{printf("Only %f",h);
+	}
+
+	else
+	{
+	printf("imaginary");
+	}
+	getch();
+	}
+
